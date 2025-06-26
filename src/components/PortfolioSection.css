@@ -1,0 +1,367 @@
+.portfolio-card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* The height will now be more dynamic based on content */
+    /* min-height: 700px; /* Adjust as needed for overall card height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Light Theme Specific Styles */
+  .light-portfolio {
+    background-color: #ffffff;
+    color: #333333;
+  }
+  .light-portfolio .text-muted,
+  .light-portfolio .portfolio-nav .nav-link,
+  .light-portfolio .location-text,
+  .light-portfolio .contact-btn {
+    color: #6c757d !important;
+  }
+  .light-portfolio .portfolio-nav .nav-link:hover {
+    color: #333333 !important;
+  }
+  .light-portfolio .contact-btn {
+    border-color: #6c757d;
+  }
+  .light-portfolio .theme-toggle-icon {
+    color: #333; /* Dark icon for light theme */
+  }
+  
+  /* Dark Theme Specific Styles */
+  .dark-portfolio {
+    background-color: #1a1a2e; /* Darker background for the card */
+    color: #f0f0f0;
+  }
+  .dark-portfolio .text-muted,
+  .dark-portfolio .portfolio-nav .nav-link,
+  .dark-portfolio .location-text,
+  .dark-portfolio .contact-btn {
+    color: #b0b0b0 !important;
+  }
+  .dark-portfolio .portfolio-nav .nav-link:hover {
+    color: #f0f0f0 !important;
+  }
+  .dark-portfolio .contact-btn {
+    border-color: #b0b0b0;
+  }
+  .dark-portfolio .theme-toggle-icon {
+    color: #f0f0f0; /* Light icon for dark theme */
+  }
+  
+  /* --- Internal Header --- */
+  .portfolio-internal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Subtle separator */
+  }
+  .dark-portfolio .portfolio-internal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .logo-text {
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .theme-toggle-icon .btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit; /* Inherit color from parent theme */
+  }
+  .portfolio-nav .nav-link {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  /* --- Hero Section --- */
+  .hero-section {
+    padding-bottom: 2rem !important; /* Ensure space below hero */
+    position: relative; /* For profile image positioning */
+  }
+  
+  .hello-bubble {
+    background-color: #b3e0e0; /* Light blue */
+    color: #1a5e5e;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  .dark-portfolio .hello-bubble {
+    background-color: #3c5b5b; /* Darker blue for dark theme */
+    color: #92e0e0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+  }
+  .highlight-name {
+    color: #ffd700; /* Yellow highlight for name */
+  }
+  
+  .role-text {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+  .location-text {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  .dark-portfolio .location-text {
+    color: #ccc;
+  }
+  
+  .download-btn {
+    background-color: #ffd700; /* Yellow button */
+    border-color: #ffd700;
+    color: #333 !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+  }
+  .download-btn:hover {
+    background-color: #e6c200;
+    border-color: #e6c200;
+  }
+  .contact-btn {
+    background: none;
+    border-color: #6c757d; /* Standard grey border */
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+  }
+  .dark-portfolio .contact-btn {
+    border-color: #b0b0b0; /* Lighter grey border for dark theme */
+    color: #b0b0b0;
+  }
+  .contact-btn:hover {
+    background-color: rgba(108, 117, 125, 0.1);
+  }
+  .dark-portfolio .contact-btn:hover {
+    background-color: rgba(176, 176, 176, 0.1);
+  }
+  
+  
+  .profile-image-container {
+    width: 180px; /* Adjust size of the entire container */
+    height: 180px;
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-blob {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1; /* Behind the image */
+    transform: scale(1.1) rotate(15deg); /* Make it a bit larger and rotated */
+  }
+  
+  .yellow-bg-blob {
+    background-color: #ffd700; /* Yellow blob */
+  }
+  
+  .profile-pic-hero {
+    width: 130px; /* Adjust image size */
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff; /* White border around picture */
+    z-index: 2; /* On top of the blob */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .dark-portfolio .profile-pic-hero {
+    border: 4px solid #1a1a2e; /* Dark border for dark theme */
+  }
+  
+  
+  /* --- Social Media Sidebar --- */
+  .social-sidebar {
+    position: absolute;
+    left: 15px; /* Adjust based on desired padding from left edge */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between icons */
+    z-index: 10; /* Ensure it's above other content */
+  }
+  
+  .social-icon-link {
+    color: #888; /* Grey for light theme */
+    transition: color 0.2s ease-in-out;
+  }
+  .social-icon-link:hover {
+    color: #ffd700; /* Yellow on hover */
+  }
+  .dark-portfolio .social-icon-link {
+    color: #b0b0b0; /* Lighter grey for dark theme */
+  }
+  
+  
+  /* --- This is it :) Section --- */
+  .this-is-it-section {
+    background-color: #f8f8f8; /* Light background for this section */
+    border-top: 1px solid rgba(0, 0, 0, 0.05); /* Separator */
+    padding-top: 2rem !important;
+    position: relative; /* For shapes */
+    overflow: hidden; /* For shapes */
+  }
+  .dark-portfolio .this-is-it-section {
+    background-color: #262638; /* Darker background for this section in dark theme */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .section-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .section-text-small {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #888; /* Lighter text for the small paragraph */
+  }
+  .dark-portfolio .section-text-small {
+    color: #ccc;
+  }
+  
+  
+  .pointing-hand-container {
+      width: 250px; /* Adjust size of the entire container */
+      height: 180px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .pointing-hand-image {
+      width: 200px; /* Adjust hand image size */
+      height: auto;
+      object-fit: contain;
+      z-index: 2;
+      transform: rotateY(180deg); /* Flip horizontally if needed */
+  }
+  .hand-blob {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      z-index: 1; /* Behind the image */
+      transform: scale(1.1) rotate(-10deg);
+  }
+  .grey-bg-blob {
+      background-color: #d3d3d3; /* Grey blob for hand section */
+  }
+  
+  
+  /* --- Abstract Shapes Section 2 --- */
+  .abstract-shapes-section-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .shape {
+    position: absolute;
+    border-radius: 50%; /* Make them circular/blob-like */
+    opacity: 0.7;
+  }
+  
+  .yellow-blob-section-2 {
+    background-color: #ffd700;
+    width: 120px;
+    height: 120px;
+    bottom: -40px;
+    left: 10%;
+    transform: rotate(30deg);
+  }
+  
+  .grey-blob-section-2 {
+    background-color: #d3d3d3;
+    width: 90px;
+    height: 90px;
+    bottom: 50px;
+    right: -30px;
+    transform: rotate(-20deg);
+  }
+  
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 991px) { /* Medium devices (e.g., tablets) */
+    .hero-section .col-8,
+    .hero-section .col-4 {
+      width: 100%; /* Stack columns */
+      text-align: center;
+    }
+    .hero-section .col-4 {
+      margin-top: 1.5rem; /* Space between text and image */
+    }
+    .hero-section .d-flex.gap-2 {
+      justify-content: center; /* Center buttons */
+    }
+    .social-sidebar {
+      position: static; /* Remove fixed position */
+      transform: none;
+      flex-direction: row; /* Make icons horizontal */
+      justify-content: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .this-is-it-section .col-4,
+    .this-is-it-section .col-8 {
+        width: 100%;
+        text-align: center;
+    }
+    .pointing-hand-container {
+        margin: 1.5rem auto; /* Center hand image */
+    }
+  }
+  
+  @media (max-width: 767px) { /* Small devices (e.g., phones) */
+    .portfolio-internal-header .portfolio-nav {
+      display: none; /* Hide internal nav on very small screens or make it a toggle */
+    }
+    .portfolio-internal-header .d-flex {
+      flex-direction: column;
+      text-align: center;
+    }
+    .portfolio-internal-header .theme-toggle-icon {
+      margin-top: 0.5rem;
+    }
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+    .download-btn, .contact-btn {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+    }
+  }
